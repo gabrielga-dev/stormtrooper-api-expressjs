@@ -3,6 +3,7 @@ import stormtrooperRoutes from "./StormtrooperRoutes.js";
 
 import passport from 'passport'
 import {BasicStrategy} from 'passport-http'
+import loginRoutes from "./LoginRoutes.js";
 
 const basicStrategyVerification = new BasicStrategy(
     (username, password, done) => {
@@ -20,5 +21,6 @@ routes.use(passport.initialize());
 passport.use(basicStrategyVerification);
 
 routes.use('/stormtroopers', basicMiddleware, stormtrooperRoutes);
+routes.use('/', loginRoutes);
 
 export default routes;
