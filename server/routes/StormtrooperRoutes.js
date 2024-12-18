@@ -23,11 +23,13 @@ const stormtrooperRoutes = new Router();
  *   get:
  *     tags: [Stormtroopers]
  *     summary: Return all stormtroopers
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: header
- *         name: Basic
+ *         name: Authorization
  *         required: true
- *         description: Basic token for authorization
+ *         description: JWT token for authorization
  *         schema:
  *           type: string
  *     responses:
@@ -49,6 +51,8 @@ stormtrooperRoutes.get('/', controller.list)
  *     tags: [Stormtroopers]
  *     summary: Search for a specific stormtrooper by its ID
  *     description: Return all details of a single stormtrooper by the given ID.
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -57,9 +61,9 @@ stormtrooperRoutes.get('/', controller.list)
  *           type: string
  *         description: Stormtrooper's ID
  *       - in: header
- *         name: Basic
+ *         name: Authorization
  *         required: true
- *         description: Basic token for authorization
+ *         description: JWT token for authorization
  *         schema:
  *           type: string
  *     responses:
@@ -85,11 +89,19 @@ stormtrooperRoutes.get('/:id', verifyId, controller.byId)
  *     tags: [Stormtroopers]
  *     summary: Create a new stormtrooper
  *     description: Create a new stormtrooper with the given data.
+ *     security:
+ *       - BearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/StormtrooperRequest'
  *     parameters:
  *       - in: header
- *         name: Basic
+ *         name: Authorization
  *         required: true
- *         description: Basic token for authorization
+ *         description: JWT token for authorization
  *         schema:
  *           type: string
  *     responses:
@@ -109,6 +121,14 @@ stormtrooperRoutes.post('/', controller.create)
  *     tags: [Stormtroopers]
  *     summary: Update a stormtrooper
  *     description: Update a stormtrooper with the given data.
+ *     security:
+ *       - BearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/StormtrooperRequest'
  *     parameters:
  *       - in: path
  *         name: id
@@ -117,9 +137,9 @@ stormtrooperRoutes.post('/', controller.create)
  *           type: string
  *         description: Stormtrooper's ID
  *       - in: header
- *         name: Basic
+ *         name: Authorization
  *         required: true
- *         description: Basic token for authorization
+ *         description: JWT token for authorization
  *         schema:
  *           type: string
  *     responses:
@@ -145,6 +165,8 @@ stormtrooperRoutes.put('/:id', verifyId, controller.update)
  *     tags: [Stormtroopers]
  *     summary: Delete a stormtrooper
  *     description: Delete a stormtrooper by the given ID.
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -152,12 +174,6 @@ stormtrooperRoutes.put('/:id', verifyId, controller.update)
  *         schema:
  *           type: string
  *         description: Stormtrooper's ID
- *       - in: header
- *         name: Basic
- *         required: true
- *         description: Basic token for authorization
- *         schema:
- *           type: string
  *     responses:
  *       201:
  *         description: Stormtrooper deleted

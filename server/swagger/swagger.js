@@ -16,12 +16,22 @@ const swaggerDefinition = {
     ],
     components: {
         schemas: SwaggerSchemas,
+        securitySchemes: {
+            BearerAuth: {
+                type: 'http',
+                scheme: 'bearer',
+                bearerFormat: 'JWT',
+            },
+        },
     }
 };
 
 const options = {
-    swaggerDefinition,
-    apis: ['server/routes/StormtrooperRoutes.js'],
+    definition: swaggerDefinition,
+    apis: [
+        'server/routes/StormtrooperRoutes.js',
+        'server/routes/LoginRoutes.js'
+    ],
 };
 const swaggerSpec = swaggerJSDoc(options);
 
