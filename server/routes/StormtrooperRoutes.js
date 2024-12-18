@@ -23,6 +23,13 @@ const stormtrooperRoutes = new Router();
  *   get:
  *     tags: [Stormtroopers]
  *     summary: Return all stormtroopers
+ *     parameters:
+ *       - in: header
+ *         name: Basic
+ *         required: true
+ *         description: Basic token for authorization
+ *         schema:
+ *           type: string
  *     responses:
  *       200:
  *         description: Stormtroopers list
@@ -49,6 +56,12 @@ stormtrooperRoutes.get('/', controller.list)
  *         schema:
  *           type: string
  *         description: Stormtrooper's ID
+ *       - in: header
+ *         name: Basic
+ *         required: true
+ *         description: Basic token for authorization
+ *         schema:
+ *           type: string
  *     responses:
  *       200:
  *         description: Stormtrooper's data
@@ -72,6 +85,13 @@ stormtrooperRoutes.get('/:id', verifyId, controller.byId)
  *     tags: [Stormtroopers]
  *     summary: Create a new stormtrooper
  *     description: Create a new stormtrooper with the given data.
+ *     parameters:
+ *       - in: header
+ *         name: Basic
+ *         required: true
+ *         description: Basic token for authorization
+ *         schema:
+ *           type: string
  *     responses:
  *       200:
  *         description: Stormtrooper's data
@@ -96,6 +116,12 @@ stormtrooperRoutes.post('/', controller.create)
  *         schema:
  *           type: string
  *         description: Stormtrooper's ID
+ *       - in: header
+ *         name: Basic
+ *         required: true
+ *         description: Basic token for authorization
+ *         schema:
+ *           type: string
  *     responses:
  *       200:
  *         description: Stormtrooper's data
@@ -126,6 +152,12 @@ stormtrooperRoutes.put('/:id', verifyId, controller.update)
  *         schema:
  *           type: string
  *         description: Stormtrooper's ID
+ *       - in: header
+ *         name: Basic
+ *         required: true
+ *         description: Basic token for authorization
+ *         schema:
+ *           type: string
  *     responses:
  *       201:
  *         description: Stormtrooper deleted
