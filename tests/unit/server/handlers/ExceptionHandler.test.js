@@ -1,4 +1,4 @@
-import ExceptionHandler from "../../../server/handlers/ExceptionHandler.js";
+import ExceptionHandler from "../../../../server/handlers/ExceptionHandler.js";
 
 const mockedResponse = {
     myJson: {},

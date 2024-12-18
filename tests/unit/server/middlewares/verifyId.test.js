@@ -1,5 +1,5 @@
-import verifyId from '../../../server/middlewares/verifyId.js';
-import {InvalidStormtrooperId} from "../../../server/dto/exceptions/stormtrooper/InvalidStormtrooperId.js";
+import verifyId from '../../../../server/middlewares/verifyId.js';
+import {InvalidStormtrooperId} from "../../../../server/dto/exceptions/stormtrooper/InvalidStormtrooperId.js";
 
 const didVerifyIdHasError = (id) => {
     const request = {
