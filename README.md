@@ -43,6 +43,11 @@ and [mongoose config file](./server/config/mongoose.js).
 Once the project is running, you can consume its APIs by accessing the 
 [swagger documentation](http://localhost:3000/api-docs/).
 
+To be able to consume all APIs, use the following credentials for Basic authorization:
+- **Username:** rebels
+- **Password:** 1138
+
+
 ## 🇧🇷 Português 
 
 
@@ -79,3 +84,7 @@ localmente ou usando um container Docker.
 
 Assim que o projeto estiver iniciado, você consegue consumir a suas APIs acessando a 
 [documentação swagger](http://localhost:3000/api-docs/).
+
+Para conseguir consumir todas as APIs, use as seguintes credenciais para a autorização Basic:
+- **Username:** rebels
+- **Password:** 1138
