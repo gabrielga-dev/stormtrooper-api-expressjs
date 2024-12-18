@@ -1,0 +1,24 @@
+{
+  "name": "5_4_api_stormtroopers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "export DEBUG=livro_nodejs:* && nodemon server/bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "config": "^3.3.12",
+    "dnscache": "^1.0.2",
+    "express": "^4.21.2",
+    "mongoist": "^3.0.2",
+    "mongoose": "^8.8.4",
+    "optional-js": "^2.3.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
