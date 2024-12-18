@@ -1,13 +1,7 @@
 import {Router} from 'express';
 import controller from '../controller/StormtrooperController.js';
-import {InvalidStormtrooperId} from "../dto/exceptions/stormtrooper/InvalidStormtrooperId.js";
+import verifyId from "../middlewares/verifyId.js";
 
-const verifyId = (req, res, next) => {
-    if (!/^[0-9a-fA-F]{24}$/.test(req.params.id)) {
-        throw new InvalidStormtrooperId()
-    }
-    return next()
-}
 
 /**
  * @swagger

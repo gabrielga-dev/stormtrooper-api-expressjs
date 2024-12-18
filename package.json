@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "export DEBUG=livro_nodejs:* && nodemon server/bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage server/**/*test.js"
   },
   "type": "module",
   "keywords": [],
@@ -12,6 +12,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^29.7.0",
+    "babel-preset-airbnb": "^5.0.0",
     "config": "^3.3.12",
     "dnscache": "^1.0.2",
     "express": "^4.21.2",
@@ -22,5 +25,8 @@
     "optional-js": "^2.3.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
