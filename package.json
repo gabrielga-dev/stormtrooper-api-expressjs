@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "export DEBUG=livro_nodejs:* && nodemon server/bin/www",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage server/**/*.test.js"
+    "test": "jest"
   },
   "type": "module",
   "keywords": [],
