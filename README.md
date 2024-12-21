@@ -2,8 +2,8 @@
 
 ## 🌍 Languages
 
-- 🇺🇸 [English](#english)
-- 🇧🇷 [Português](#português)
+- 🇺🇸 [English](#-english)
+- 🇧🇷 [Português](#-português)
 
 ---
 
@@ -38,6 +38,8 @@ and [mongoose config file](./server/config/mongoose.js).
 
     `npm run dev` (it will make the project run in multiples threads)
 
+  If you want to run all implemented unity tests, run `npm run test`
+
 ### How to consume
 
 Once the project is running, you can consume its APIs by accessing the 
@@ -48,7 +50,7 @@ To be able to consume all APIs, use the following credentials to generate the JW
 - **Password:** 1138
 
 
-## 🇧🇷 Português 
+## 🇧🇷 Português
 
 
 Bem-vindo(a) ao meu projeto! Esse é o meu primeiro projeto usando Node.js com Express.js.
@@ -79,6 +81,8 @@ localmente ou usando um container Docker.
   Você pode iniciar o projeto rodando o seguinte comando:
 
   `npm run dev` (ele fará com que o projeto rode e múltiplas threads)
+
+  Se você quiser rodar todos os testes de unidade implementados, rode o seguinte comando `npm run test`
 
 ### Como consumir
 
